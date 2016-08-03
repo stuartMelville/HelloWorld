@@ -3,10 +3,36 @@ package com.plural.stringtest;
 /**
  * Created by stuart on 7/26/2016.
  */
+
+
 public class StringTest {
-
-
     public static void main(String args[]){
+//    equalsTest();
+//        reverseStringUsingStringBuffer("ABCDEFGHIJKLMNOPQRSTUVWXYZ");
+        reverseStringUsingForLoop("ABCDEFGHIJKLMNOPQRSTUVWXYZ");
+    }
+
+    private static void reverseStringUsingStringBuffer(String input){
+        String reverse;
+        StringBuilder reverseThatString = new StringBuilder(input);
+        reverse = reverseThatString.toString();
+        System.out.println(reverse);
+        reverse = reverseThatString.reverse().toString();
+        System.out.println(reverse);
+    }
+    private static void reverseStringUsingForLoop(String input){
+        char[] inputCharArray = input.toCharArray();
+        System.out.println(String.valueOf(inputCharArray));
+        char[] reverseCharArray =  new char[inputCharArray.length];
+        int y = 0;
+        for (int i =inputCharArray.length-1 ;i>=0;i--){
+            reverseCharArray[y++] = inputCharArray[i];
+        }
+        System.out.println(String.valueOf(reverseCharArray));
+    }
+
+
+    private static void equalsTest(){
         String s1 = "I Love";
         s1 += " Java";
 
@@ -56,6 +82,6 @@ public class StringTest {
         stringBuilder2.append("BOB.");
         String s6 = stringBuilder2.toString().intern();
 
-
     }
+
 }
